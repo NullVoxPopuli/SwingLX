@@ -8,7 +8,7 @@ gem 'rake', '0.9.2'
 gem 'heroku'
 
 gem 'sqlite3'
-gem 'activerecord-postgresql-adapter'
+gem 'pg' #activerecord-postgresql-adapter
 
 
 # Gems used only for assets and not required
