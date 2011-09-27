@@ -5,10 +5,10 @@ gem 'paperclip'
 gem 'devise'
 gem 'rake', '0.9.2'
 
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+gem 'heroku'
 
 gem 'sqlite3'
+gem 'activerecord-postgresql-adapter'
 
 
 # Gems used only for assets and not required
@@ -21,11 +21,6 @@ end
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
