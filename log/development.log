@@ -1834,3 +1834,78 @@ Served asset /manage/venues.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
 Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+  Processing by Manage::RootController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered manage/root/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 299ms (Views: 95.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/events.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/instructors.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/schedules.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/musics.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/venues.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage_instructors.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /scaffolds.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/events.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/instructors.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/musics.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:10 -0400
+Served asset /manage/schedules.js - 304 Not Modified (51ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:11 -0400
+Served asset /manage/venues.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:11 -0400
+Served asset /manage_instructors.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 23:29:11 -0400
+Served asset /application.js - 304 Not Modified (1ms)
