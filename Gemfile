@@ -8,8 +8,11 @@ gem 'rake', '0.9.2'
 gem 'heroku'
 
 gem 'sqlite3'
-gem 'pg' #activerecord-postgresql-adapter
 
+group :production do
+  gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
+  gem 'pg'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
