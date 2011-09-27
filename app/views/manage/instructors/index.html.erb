@@ -1,0 +1,21 @@
+<h1>Listing manage_instructors</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @manage_instructors.each do |manage_instructor| %>
+  <tr>
+    <td><%= link_to 'Show', manage_instructor %></td>
+    <td><%= link_to 'Edit', edit_manage_instructor_path(manage_instructor) %></td>
+    <td><%= link_to 'Destroy', manage_instructor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Instructor', new_manage_instructor_path %>

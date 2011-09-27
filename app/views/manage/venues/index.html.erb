@@ -1,0 +1,21 @@
+<h1>Listing manage_venues</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @manage_venues.each do |manage_venue| %>
+  <tr>
+    <td><%= link_to 'Show', manage_venue %></td>
+    <td><%= link_to 'Edit', edit_manage_venue_path(manage_venue) %></td>
+    <td><%= link_to 'Destroy', manage_venue, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Venue', new_manage_venue_path %>

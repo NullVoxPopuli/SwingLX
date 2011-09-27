@@ -1,0 +1,17 @@
+<%= form_for(@manage_schedule) do |f| %>
+  <% if @manage_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manage_schedule.errors.count, "error") %> prohibited this manage_schedule from being saved:</h2>
+
+      <ul>
+      <% @manage_schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

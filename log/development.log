@@ -1,0 +1,1836 @@
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 19:56:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/manage"):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (42.8ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:11:28 -0400
+
+LoadError (Expected /Users/lprestonsegoiii/Personal Projects/SwingLX/app/controllers/manage/root_controller.rb to define Manage::RootController):
+  app/controllers/manage/root_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:12:10 -0400
+  Processing by Manage::RootController#index as HTML
+Completed   in 39ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:12:10 -0400
+  Processing by Devise::SessionsController#new as HTML
+Completed 500 Internal Server Error in 121ms
+
+ActiveRecord::StatementInvalid (Could not find table 'users'):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.9ms)
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (3.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (4.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateManageEvents (20110923042408)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "manage_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "city" varchar(255), "state" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110923042408')[0m
+Migrating to CreateManageVenues (20110923043049)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "manage_venues" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110923043049')[0m
+Migrating to CreateManageInstructors (20110923043816)
+  [1m[35m (0.6ms)[0m  CREATE TABLE "manage_instructors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110923043816')[0m
+Migrating to CreateManageMusics (20110923043838)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "manage_musics" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110923043838')[0m
+Migrating to CreateManageSchedules (20110923044309)
+  [1m[35m (0.5ms)[0m  CREATE TABLE "manage_schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110923044309')[0m
+Migrating to DeviseCreateUsers (20110927000204)
+  [1m[35m (0.6ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) DEFAULT '' NOT NULL, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255), "confirmation_token" varchar(255), "confirmed_at" datetime, "confirmation_sent_at" datetime, "failed_attempts" integer DEFAULT 0, "unlock_token" varchar(255), "locked_at" datetime, "authentication_token" varchar(255), "admin" boolean DEFAULT 'f', "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110927000204')
+  [1m[36m (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_events")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_instructors")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_musics")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_schedules")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_venues")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:24:53 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.8ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (31.2ms)
+Compiled application.css  (3ms)  (pid 4476)
+Compiled manage/events.css  (24ms)  (pid 4476)
+Compiled manage/instructors.css  (10ms)  (pid 4476)
+Compiled manage/musics.css  (2ms)  (pid 4476)
+Compiled manage/schedules.css  (9ms)  (pid 4476)
+Compiled manage/venues.css  (14ms)  (pid 4476)
+Compiled manage_instructors.css  (14ms)  (pid 4476)
+Compiled scaffolds.css  (15ms)  (pid 4476)
+Compiled application.js  (5ms)  (pid 4476)
+Compiled jquery.js  (19ms)  (pid 4476)
+Compiled jquery_ujs.js  (1ms)  (pid 4476)
+Compiled manage/events.js  (273ms)  (pid 4476)
+Compiled manage/instructors.js  (90ms)  (pid 4476)
+Compiled manage/musics.js  (80ms)  (pid 4476)
+Compiled manage/schedules.js  (78ms)  (pid 4476)
+Compiled manage/venues.js  (89ms)  (pid 4476)
+Compiled manage_instructors.js  (93ms)  (pid 4476)
+Completed 200 OK in 1221ms (Views: 1128.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:54 -0400
+Served asset /manage/events.css - 200 OK (11ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /application.css - 200 OK (4ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/instructors.css - 200 OK (4ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/musics.css - 200 OK (9ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/schedules.css - 200 OK (6ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage_instructors.css - 200 OK (7ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/venues.css - 200 OK (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /scaffolds.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /jquery.js - 200 OK (17ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /jquery_ujs.js - 200 OK (6ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/events.js - 200 OK (9ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/instructors.js - 200 OK (54ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/musics.js - 200 OK (6ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/schedules.js - 200 OK (5ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage/venues.js - 200 OK (4ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /manage_instructors.js - 200 OK (5ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:24:55 -0400
+Served asset /application.js - 200 OK (6ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:28:35 -0400
+  Processing by Manage::RootController#index as HTML
+Completed   in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:28:35 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/shared/_links.erb (251.7ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (255.3ms)
+Completed 500 Internal Server Error in 332ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cf12f860>:0x007fe0cf12b670>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:28:48 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/shared/_links.erb (125.4ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (128.6ms)
+Completed 500 Internal Server Error in 198ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cf1543e0>:0x007fe0cf14fbb0>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:28:50 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/shared/_links.erb (97.1ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (100.4ms)
+Completed 500 Internal Server Error in 176ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cf297ba8>:0x007fe0cf1a8120>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (33.5ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.7ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:28:54 -0400
+  Processing by Manage::RootController#index as HTML
+Completed   in 9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:28:54 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/shared/_links.erb (151.4ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (154.5ms)
+Completed 500 Internal Server Error in 227ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cf16ff28>:0x007fe0cf16b770>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:29:54 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (133.9ms)
+Rendered devise/sessions/new.html.erb within layouts/application (138.4ms)
+Completed 500 Internal Server Error in 167ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cd5a9f00>:0x007fe0cd5a58d8>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  app/views/devise/shared/_links.erb:14:in `_app_views_devise_shared__links_erb__4402783411878360918_70301746361980'
+  app/views/devise/sessions/new.html.erb:17:in `_app_views_devise_sessions_new_html_erb___2255232600496341074_70301747323160'
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:29:58 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (124.1ms)
+Rendered devise/sessions/new.html.erb within layouts/application (127.9ms)
+Completed 500 Internal Server Error in 201ms
+
+ActionView::Template::Error (undefined method `new_confirmation_path' for #<#<Class:0x007fe0cf109f98>:0x007fe0cf105e48>):
+    11: <% end -%>
+    12: 
+    13: <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+    14:   <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    15: <% end -%>
+    16: 
+    17: <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  app/views/devise/shared/_links.erb:14:in `_app_views_devise_shared__links_erb__4402783411878360918_70301746361980'
+  app/views/devise/sessions/new.html.erb:17:in `_app_views_devise_sessions_new_html_erb___2255232600496341074_70301747323160'
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (2.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 252ms (Views: 135.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/instructors.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/events.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/schedules.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/musics.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/venues.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage_instructors.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/events.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/instructors.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/musics.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/schedules.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage/venues.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /manage_instructors.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:30:26 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2011-09-26 20:31:24 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (34.4ms)
+Rendered devise/sessions/new.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 210ms (Views: 107.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/events.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/instructors.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/venues.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/schedules.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/musics.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage_instructors.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/events.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/instructors.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/musics.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/schedules.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage/venues.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /manage_instructors.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:25 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered devise/registrations/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 109ms (Views: 38.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:31:29 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateManageEvents (20110923042408)
+Migrating to CreateManageVenues (20110923043049)
+Migrating to CreateManageInstructors (20110923043816)
+Migrating to CreateManageMusics (20110923043838)
+Migrating to CreateManageSchedules (20110923044309)
+Migrating to DeviseCreateUsers (20110927000204)
+Migrating to AddUsernameToUsers (20110927003754)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (69.4ms)[0m  [1mALTER TABLE "users" ADD "username" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110927003754')
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_events")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_instructors")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_musics")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_schedules")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_venues")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateManageEvents (20110923042408)
+Migrating to CreateManageVenues (20110923043049)
+Migrating to CreateManageInstructors (20110923043816)
+Migrating to CreateManageMusics (20110923043838)
+Migrating to CreateManageSchedules (20110923044309)
+Migrating to DeviseCreateUsers (20110927000204)
+Migrating to AddUsernameToUsers (20110927003754)
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_events")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_instructors")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_musics")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("manage_schedules")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("manage_venues")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.3ms)
+Rendered devise/registrations/new.html.erb within layouts/application (94.5ms)
+Completed 200 OK in 242ms (Views: 156.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+Served asset /manage/events.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+Served asset /manage/instructors.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+Served asset /manage/musics.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:23 -0400
+Served asset /manage/schedules.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/venues.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage_instructors.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/events.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/instructors.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/musics.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/schedules.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage/venues.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /manage_instructors.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:52:24 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.5ms)
+Rendered devise/registrations/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 86ms (Views: 30.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:53:05 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-09-26 20:53:13 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "email"=>"theprecognition@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE "users"."email" = 'theprecognition@gmail.com' LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'QDBisqnAzUbA25Nzrs2u' LIMIT 1
+  [1m[36mSQL (56.7ms)[0m  [1mINSERT INTO "users" ("admin", "authentication_token", "confirmation_sent_at", "confirmation_token", "confirmed_at", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "failed_attempts", "last_sign_in_at", "last_sign_in_ip", "locked_at", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "unlock_token", "updated_at", "username") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["admin", false], ["authentication_token", nil], ["confirmation_sent_at", Tue, 27 Sep 2011 00:53:14 UTC +00:00], ["confirmation_token", "QDBisqnAzUbA25Nzrs2u"], ["confirmed_at", nil], ["created_at", Tue, 27 Sep 2011 00:53:14 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "theprecognition@gmail.com"], ["encrypted_password", "$2a$10$ffEw3/WfhYPjfIXJDHmsX.d9swzWoKJ6oef52JdINL9A6.wRQ/j2."], ["failed_attempts", 0], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["locked_at", nil], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["unlock_token", nil], ["updated_at", Tue, 27 Sep 2011 00:53:14 UTC +00:00], ["username", "DerNalia"]]
+Rendered devise/mailer/confirmation_instructions.html.erb (1.0ms)
+
+Sent mail to theprecognition@gmail.com (96ms)
+Date: Mon, 26 Sep 2011 20:53:15 -0400
+From: skynet@SwingLX.com
+Reply-To: skynet@SwingLX.com
+To: theprecognition@gmail.com
+Message-ID: <4e811e7bea40_12023fdf78b761b8635ca@Ls-MacBook-Pro.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome theprecognition@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=QDBisqnAzUbA25Nzrs2u">Confirm my account</a></p>
+Completed 500 Internal Server Error in 1337ms
+
+NameError (undefined local variable or method `root_path' for #<Devise::RegistrationsController:0x007fbef16e3b80>):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-09-26 20:54:47 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "email"=>"theprecognition@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "users" WHERE "users"."email" = 'theprecognition@gmail.com' LIMIT 1
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 118ms (Views: 13.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:48 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 46ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:55 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:54:56 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"login"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (86.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE (lower(username) = 'dernalia' OR lower(email) = 'dernalia') LIMIT 1[0m
+Completed   in 124ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"login"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+WARNING: Can't mass-assign protected attributes: login
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 80ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:55:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/s" for 127.0.0.1 at 2011-09-26 20:55:09 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users/s"):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2011-09-26 20:55:11 -0400
+
+ActionController::RoutingError (uninitialized constant UsersController):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2011-09-26 20:56:52 -0400
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-09-26 20:56:55 -0400
+Served asset /rails.png - 200 OK (18ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+  Processing by Manage::RootController#index as HTML
+Completed   in 9ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 92ms (Views: 12.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:56:58 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:57:04 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"login"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (lower(username) = 'dernalia' OR lower(email) = 'dernalia') LIMIT 1
+Completed   in 34ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"login"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+WARNING: Can't mass-assign protected attributes: login
+Rendered devise/shared/_links.erb (1.4ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 80ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:05 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 91ms (Views: 12.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:42 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed   in 10ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Rendered devise/shared/_links.erb (1.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 146ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:57:48 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed   in 9ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"DerNalia", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Rendered devise/shared/_links.erb (1.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 152ms (Views: 13.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:35 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/managers" for 127.0.0.1 at 2011-09-26 20:58:39 -0400
+
+ActionController::RoutingError (No route matches [GET] "/managers"):
+  
+
+Rendered /Users/lprestonsegoiii/.rvm/gems/ruby-1.9.2-p290@SwingLX/gems/actionpack-3.1.0/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+  Processing by Manage::RootController#index as HTML
+Completed   in 55ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.4ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 92ms (Views: 12.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:42 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"theprecognition@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed   in 9ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"username"=>"theprecognition@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Rendered devise/shared/_links.erb (1.4ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 146ms (Views: 13.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:58:44 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2011-09-26 20:59:50 -0400
+  Processing by Devise::ConfirmationsController#new as HTML
+Rendered devise/shared/_links.erb (1.4ms)
+Rendered devise/confirmations/new.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 82ms (Views: 74.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:50 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:50 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:50 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:50 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:51 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+  Processing by Devise::ConfirmationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VV/r7y0QOpQ35NNTr+dRKdnheQRkCUTUKzDDOREmxhQ=", "user"=>{"email"=>"theprecognition@gmail.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'theprecognition@gmail.com' LIMIT 1[0m
+Rendered devise/mailer/confirmation_instructions.html.erb (0.6ms)
+
+Sent mail to theprecognition@gmail.com (10ms)
+Date: Mon, 26 Sep 2011 20:59:55 -0400
+From: skynet@SwingLX.com
+Reply-To: skynet@SwingLX.com
+To: theprecognition@gmail.com
+Message-ID: <4e81200b3ecc0_12023fdf71d2009c636a7@Ls-MacBook-Pro.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome theprecognition@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=QDBisqnAzUbA25Nzrs2u">Confirm my account</a></p>
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 129ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.3ms)
+Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 87ms (Views: 11.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 20:59:55 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/users/confirmation?confirmation_token=QDBisqnAzUbA25Nzrs2u" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"QDBisqnAzUbA25Nzrs2u"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'QDBisqnAzUbA25Nzrs2u' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2011-09-27 01:00:06.755795', "updated_at" = '2011-09-27 01:00:06.756163' WHERE "users"."id" = 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2011-09-27 01:00:06.800312', "current_sign_in_at" = '2011-09-27 01:00:06.800312', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2011-09-27 01:00:06.800677' WHERE "users"."id" = 1
+Redirected to http://localhost:3000/manage
+Completed 302 Found in 87ms
+
+
+Started GET "/manage" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+  Processing by Manage::RootController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered manage/root/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 8.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/manage/events.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage/events.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage/venues.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage/instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage/schedules.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage/musics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /manage_instructors.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:06 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/events.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage/events.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/instructors.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage/instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/musics.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage/musics.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/schedules.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage/schedules.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage_instructors.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage_instructors.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/manage/venues.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /manage/venues.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2011-09-26 21:00:07 -0400
+Served asset /application.js - 304 Not Modified (1ms)

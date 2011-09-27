@@ -1,0 +1,21 @@
+<h1>Listing manage_musics</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @manage_musics.each do |manage_music| %>
+  <tr>
+    <td><%= link_to 'Show', manage_music %></td>
+    <td><%= link_to 'Edit', edit_manage_music_path(manage_music) %></td>
+    <td><%= link_to 'Destroy', manage_music, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Music', new_manage_music_path %>
