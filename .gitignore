@@ -1,3 +1,17 @@
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Others
+certificates/
+shared/
+*.espressostorage
 tmp/
+log/
+
 Gemfile.lock
-tmp
+
