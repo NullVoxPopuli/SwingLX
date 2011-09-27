@@ -7,7 +7,9 @@ gem 'rake', '0.9.2'
 
 gem 'heroku'
 
-gem 'sqlite3'
+group :development do
+	gem 'sqlite3'
+end
 
 group :production do
   gem 'therubyracer-heroku', '0.8.1.pre3' # you will need this too
