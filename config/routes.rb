@@ -5,7 +5,7 @@ SwingLX::Application.routes.draw do
     get "/logout" => "devise/sessions#destroy"    
   end
 
-  devise_for :users, :controllers => { :registrations => :registrations }
+  devise_for :users#, :controllers => { :registrations => :registrations }
 
   namespace :manage do 
     root :to => "root#index"

@@ -8,6 +8,13 @@
 </head>
 <body>
 
+<% if request.path =~ /\/manage/%>
+	<ul class="hmenu">
+	  <%= render :partial => 'devise/menu/registration_items' %>
+	  <%= render :partial => 'devise/menu/login_items' %>
+	</ul>
+<% end %>
+
 <%= yield %>
 
 </body>

@@ -12,6 +12,7 @@ shared/
 *.espressostorage
 tmp/
 log/
+.bundle/
 
 Gemfile.lock
 
