@@ -1,4 +1,6 @@
 class Manage::SchedulesController < Manage::RootController
+  layout :manage_facebox
+  
   # GET /manage/schedules
   # GET /manage/schedules.json
   def index

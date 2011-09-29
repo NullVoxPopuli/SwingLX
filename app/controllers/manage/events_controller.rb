@@ -1,4 +1,5 @@
 class Manage::EventsController < Manage::RootController
+  
   # GET /manage/events
   # GET /manage/events.json
   def index

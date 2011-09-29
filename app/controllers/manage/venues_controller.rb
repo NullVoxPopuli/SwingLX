@@ -1,4 +1,6 @@
-class Manage::VenuesController < Manage::RootController
+class Manage::VenuesController < Manage::RootController\
+  layout :manage_facebox
+  
   # GET /manage/venues
   # GET /manage/venues.json
   def index

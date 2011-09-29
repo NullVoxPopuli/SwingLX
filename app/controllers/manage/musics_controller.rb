@@ -1,4 +1,6 @@
 class Manage::MusicsController < Manage::RootController
+  layout "manage_facebox"
+  
   # GET /manage/musics
   # GET /manage/musics.json
   def index
