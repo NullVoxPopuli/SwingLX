@@ -4,6 +4,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :name
       t.string :city
       t.string :state
+      t.integer :kind
       t.text :welcome_info
       t.text :contact_info
       t.text :css_style
