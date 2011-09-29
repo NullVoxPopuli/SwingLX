@@ -9,8 +9,8 @@ Thumbs.db
 # Others
 certificates/
 shared/
-*.espressostorage
 tmp/
+tmp
 log/
 .bundle/
 

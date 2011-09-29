@@ -2,9 +2,15 @@
 <html>
 <head>
   <title>SwingLX</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", "facebox/facebox.css" %>
+  <%= javascript_include_tag "application", "facebox/facebox.js" %>
   <%= csrf_meta_tags %>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(jQuery) {
+		  jQuery('a[rel*=facebox]').facebox() 
+		});
+	</script>
 </head>
 <body>
 

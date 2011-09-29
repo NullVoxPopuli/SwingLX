@@ -28,24 +28,24 @@
 <% end %>
 
 <%= link_to "Add Instructor(s)", 
-	:controller => "manage/instructors", 
-	:action => "new", 
-	:remote => true %>
+	{:controller => "manage/instructors", 
+	:action => "new"},
+	:rel => "facebox"%>
 <br>
 <%= link_to "Add Music Information",
-	:controller => "manage/musics",
-	:action => "new",
-	:remote => true %>
+	{:controller => "manage/musics",
+	:action => "new"},
+	:rel => "facebox" %>
 <br>
 <%= link_to "Add Venue", 
-	:controller => "manage/venues",
-	:action => "new",
-	:remote => true %>
+	{:controller => "manage/venues",
+	:action => "new"},
+	:rel => "facebox" %>
 	
 	<br>
 <%= link_to "Add Schedule", 
-	:controller => "manage/schedules",
-	:action => "new",
-	:remote => true %>
+	{:controller => "manage/schedules",
+	:action => "new"},
+	:rel => "facebox"%>
 
 <br>
