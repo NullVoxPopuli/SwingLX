@@ -16,3 +16,4 @@ log/
 
 Gemfile.lock
 
+log/development.log
