@@ -1,12 +1,20 @@
 SwingLX::Application.routes.draw do
+  get "public/index"
 
+  get "public/timeline"
+
+  devise_for :users
+  
+  match '/user' => "public#index", :as => :user_root
+  
+  namespace :user do
+      root :to => "public#index"
+  end
   devise_scope :user do
     get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"    
+    get "/logout" => "devise/sessions#destroy"
   end
-
-  devise_for :users#, :controllers => { :registrations => :registrations }
-
+  
   namespace :manage do 
     root :to => "root#index"
     resources :schedules
@@ -15,6 +23,8 @@ SwingLX::Application.routes.draw do
     resources :venues
     resources :events
   end
+  
+  root :to => 'public#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,18 +72,10 @@ SwingLX::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  namespace :manage do
-    # # resources :schedules
-  end
   
-  namespace :admin do
-    # Directs /admin/products/* to Admin::ProductsController
-    
-  end
-
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  # root :to => 'devise/sessions#new'
 
   # See how all your routes lay out with "rake routes"
 

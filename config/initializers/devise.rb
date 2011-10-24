@@ -2,7 +2,7 @@
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   
-  config.authentication_keys = [ :login ]
+  config.authentication_keys = [ :login, :email ]
   config.reset_password_keys = [ :login ]
   
   # ==> Mailer Configuration

@@ -2,7 +2,7 @@ class Manage::InstructorsController < Manage::RootController
   # GET /manage/instructors
   # GET /manage/instructors.json
   def index
-    @manage_instructors = Manage::Instructor.all
+    @manage_instructors = Instructor.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class Manage::InstructorsController < Manage::RootController
   # GET /manage/instructors/1
   # GET /manage/instructors/1.json
   def show
-    @manage_instructor = Manage::Instructor.find(params[:id])
+    @manage_instructor = Instructor.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +24,7 @@ class Manage::InstructorsController < Manage::RootController
   # GET /manage/instructors/new
   # GET /manage/instructors/new.json
   def new
-    @manage_instructor = Manage::Instructor.new
+    @manage_instructor = Instructor.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +34,13 @@ class Manage::InstructorsController < Manage::RootController
 
   # GET /manage/instructors/1/edit
   def edit
-    @manage_instructor = Manage::Instructor.find(params[:id])
+    @manage_instructor = Instructor.find(params[:id])
   end
 
   # POST /manage/instructors
   # POST /manage/instructors.json
   def create
-    @manage_instructor = Manage::Instructor.new(params[:manage_instructor])
+    @manage_instructor = Instructor.new(params[:manage_instructor])
 
     respond_to do |format|
       if @manage_instructor.save
@@ -56,7 +56,7 @@ class Manage::InstructorsController < Manage::RootController
   # PUT /manage/instructors/1
   # PUT /manage/instructors/1.json
   def update
-    @manage_instructor = Manage::Instructor.find(params[:id])
+    @manage_instructor = Instructor.find(params[:id])
 
     respond_to do |format|
       if @manage_instructor.update_attributes(params[:manage_instructor])
@@ -72,7 +72,7 @@ class Manage::InstructorsController < Manage::RootController
   # DELETE /manage/instructors/1
   # DELETE /manage/instructors/1.json
   def destroy
-    @manage_instructor = Manage::Instructor.find(params[:id])
+    @manage_instructor = Instructor.find(params[:id])
     @manage_instructor.destroy
 
     respond_to do |format|

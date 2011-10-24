@@ -1,21 +1,26 @@
-<h2>Sign up</h2>
+<div class="outer_form_container">
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+	<h2>Registration</h2>
+	<div class="inner_form_container">
 
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+		  <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+		  <div class="field_and_label_container"><%= f.label :username %>
+		  <%= f.text_field :username %></div>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+		  <div class="field_and_label_container"><%= f.label :email %>
+		  <%= f.email_field :email %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+		  <div class="field_and_label_container"><%= f.label :password %>
+		  <%= f.password_field :password %></div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+		  <div class="field_and_label_container"><%= f.label :password_confirmation %>
+		  <%= f.password_field :password_confirmation %></div>
 
-<%= render :partial => "devise/shared/links" %>
+		  <div class="submit_container"><%= f.submit "Register", :class => "green_button" %></div>
+		<% end %>
+
+	</div>
+	<%= render :partial => "devise/shared/links" %>
+</div>

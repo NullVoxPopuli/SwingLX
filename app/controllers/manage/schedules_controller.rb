@@ -4,7 +4,7 @@ class Manage::SchedulesController < Manage::RootController
   # GET /manage/schedules
   # GET /manage/schedules.json
   def index
-    @manage_schedules = Manage::Schedule.all
+    @manage_schedules = Schedule.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class Manage::SchedulesController < Manage::RootController
   # GET /manage/schedules/1
   # GET /manage/schedules/1.json
   def show
-    @manage_schedule = Manage::Schedule.find(params[:id])
+    @manage_schedule = Schedule.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class Manage::SchedulesController < Manage::RootController
   # GET /manage/schedules/new
   # GET /manage/schedules/new.json
   def new
-    @manage_schedule = Manage::Schedule.new
+    @manage_schedule = Schedule.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class Manage::SchedulesController < Manage::RootController
 
   # GET /manage/schedules/1/edit
   def edit
-    @manage_schedule = Manage::Schedule.find(params[:id])
+    @manage_schedule = Schedule.find(params[:id])
   end
 
   # POST /manage/schedules
   # POST /manage/schedules.json
   def create
-    @manage_schedule = Manage::Schedule.new(params[:manage_schedule])
+    @manage_schedule = Schedule.new(params[:manage_schedule])
 
     respond_to do |format|
       if @manage_schedule.save
@@ -58,7 +58,7 @@ class Manage::SchedulesController < Manage::RootController
   # PUT /manage/schedules/1
   # PUT /manage/schedules/1.json
   def update
-    @manage_schedule = Manage::Schedule.find(params[:id])
+    @manage_schedule = Schedule.find(params[:id])
 
     respond_to do |format|
       if @manage_schedule.update_attributes(params[:manage_schedule])
@@ -74,7 +74,7 @@ class Manage::SchedulesController < Manage::RootController
   # DELETE /manage/schedules/1
   # DELETE /manage/schedules/1.json
   def destroy
-    @manage_schedule = Manage::Schedule.find(params[:id])
+    @manage_schedule = Schedule.find(params[:id])
     @manage_schedule.destroy
 
     respond_to do |format|

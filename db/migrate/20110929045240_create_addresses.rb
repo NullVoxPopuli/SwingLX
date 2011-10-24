@@ -6,7 +6,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :street
       t.string :city
       t.string :state
-      t.zip :zip_code
+      t.string :zip_code
       
       t.references :user
     end

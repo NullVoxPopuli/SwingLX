@@ -4,7 +4,7 @@ class Manage::MusicsController < Manage::RootController
   # GET /manage/musics
   # GET /manage/musics.json
   def index
-    @manage_musics = Manage::Music.all
+    @manage_musics = Music.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class Manage::MusicsController < Manage::RootController
   # GET /manage/musics/1
   # GET /manage/musics/1.json
   def show
-    @manage_music = Manage::Music.find(params[:id])
+    @manage_music = Music.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class Manage::MusicsController < Manage::RootController
   # GET /manage/musics/new
   # GET /manage/musics/new.json
   def new
-    @manage_music = Manage::Music.new
+    @manage_music = Music.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class Manage::MusicsController < Manage::RootController
 
   # GET /manage/musics/1/edit
   def edit
-    @manage_music = Manage::Music.find(params[:id])
+    @manage_music = Music.find(params[:id])
   end
 
   # POST /manage/musics
   # POST /manage/musics.json
   def create
-    @manage_music = Manage::Music.new(params[:manage_music])
+    @manage_music = Music.new(params[:manage_music])
 
     respond_to do |format|
       if @manage_music.save
@@ -58,7 +58,7 @@ class Manage::MusicsController < Manage::RootController
   # PUT /manage/musics/1
   # PUT /manage/musics/1.json
   def update
-    @manage_music = Manage::Music.find(params[:id])
+    @manage_music = Music.find(params[:id])
 
     respond_to do |format|
       if @manage_music.update_attributes(params[:manage_music])
@@ -74,7 +74,7 @@ class Manage::MusicsController < Manage::RootController
   # DELETE /manage/musics/1
   # DELETE /manage/musics/1.json
   def destroy
-    @manage_music = Manage::Music.find(params[:id])
+    @manage_music = Music.find(params[:id])
     @manage_music.destroy
 
     respond_to do |format|

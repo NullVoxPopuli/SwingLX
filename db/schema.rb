@@ -11,33 +11,78 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927003754) do
+ActiveRecord::Schema.define(:version => 20111024043130) do
 
-  create_table "manage_events", :force => true do |t|
+  create_table "addresses", :force => true do |t|
+    t.string  "name"
+    t.string  "number"
+    t.string  "street"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zip_code"
+    t.integer "user_id"
+  end
+
+  create_table "events", :force => true do |t|
     t.string   "name"
     t.string   "city"
     t.string   "state"
+    t.integer  "kind"
+    t.text     "welcome_info"
+    t.text     "contact_info"
+    t.text     "css_style"
     t.integer  "user_id"
+    t.string   "header_file_name"
+    t.datetime "header_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "manage_instructors", :force => true do |t|
+  create_table "events_instructors", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "instructor_id"
+    t.integer "user_id"
+  end
+
+  create_table "events_musics", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "music_id"
+    t.integer "user_id"
+  end
+
+  create_table "events_venues", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "venue_id"
+    t.integer "user_id"
+  end
+
+  create_table "instructors", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.string   "picture_file_name"
+    t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "manage_musics", :force => true do |t|
+  create_table "musics", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "kind"
+    t.integer  "user_id"
+    t.string   "picture_file_name"
+    t.datetime "picture_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "manage_schedules", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "manage_venues", :force => true do |t|
+  create_table "schedules", :force => true do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text     "music"
+    t.integer  "venue_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -68,5 +113,16 @@ ActiveRecord::Schema.define(:version => 20110927003754) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "venues", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "address_id"
+    t.string   "picture_file_name"
+    t.datetime "picture_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

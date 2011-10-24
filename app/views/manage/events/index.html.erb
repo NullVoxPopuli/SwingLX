@@ -1,17 +1,22 @@
-<h1>Listing manage_events</h1>
+<h1>Your Events</h1>
 
 <table>
   <tr>
     <th></th>
     <th></th>
     <th></th>
+	<th>Name</th>
+	<th>Location</th>
+	<th>Date</th>
   </tr>
 
 <% @manage_events.each do |manage_event| %>
   <tr>
-    <td><%= link_to 'Show', manage_event %></td>
-    <td><%= link_to 'Edit', edit_manage_event_path(manage_event) %></td>
-    <td><%= link_to 'Destroy', manage_event, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Show', [:manage, manage_event] %></td>
+    <td><%= link_to 'Edit', edit_manage_event_path(:manage, manage_event) %></td>
+    <td><%= link_to 'Destroy', [:manage, manage_event], confirm: 'Are you sure?', method: :delete %></td>
+	<td><%= manage_event.name %></td>
+	<td><%= manage_event.city + ", " + manage_event.state %>
   </tr>
 <% end %>
 </table>

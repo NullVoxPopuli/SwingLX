@@ -1,27 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SwingLX</title>
-  <%= stylesheet_link_tag    "application", "facebox/facebox.css" %>
-  <%= javascript_include_tag "application", "facebox/facebox.js" %>
-  <%= csrf_meta_tags %>
+	<%= csrf_meta_tags %>
+	
+ 	<title>SwingLX</title>
+ 	<%= javascript_include_tag "application" %>
+
+	<%= javascript_include_tag "facebox/facebox.js" %>
+	<%= javascript_include_tag "jQueryCSSParentSelector/jquery.cssParentSelector-1.0.3.js"%>
+  
+	<%= stylesheet_link_tag    "application", "facebox/facebox.css" %>
+
 
 	<script type="text/javascript">
 		jQuery(document).ready(function(jQuery) {
-		  jQuery('a[rel*=facebox]').facebox() 
+			jQuery('a[rel*=facebox]').facebox();
+			jQuery().cssParentSelector();
 		});
 	</script>
+	
+	<% unless flash[:notice].blank? and flash[:error].blank? and flash[:warning].blank?  %>
+		<script type="text/javascript">
+			$j(function() {
+				$j(document).ready(function () {
+					$j("#notice").show("slide", { direction: "up" }, 1000);
+				
+				});
+				
+				setTimeout(function(){if ($j("#notice").is(':visible')) {
+						$j("#notice").hide("slide", {direction: "up"}, 1000);
+					}}, 4000);
+			});
+		</script>
+	<% end %>
 </head>
 <body>
 
-<% if request.path =~ /\/manage/%>
-	<ul class="hmenu">
-	  <%= render :partial => 'devise/menu/registration_items' %>
-	  <%= render :partial => 'devise/menu/login_items' %>
-	</ul>
-<% end %>
-
-<%= yield %>
+<div class="header">
+	<div class="app_shell">
+		<% if true # request.path =~ /\/manage/%>
+			<ul class="hmenu">
+			  <%= render :partial => 'devise/menu/registration_items' %>
+			  <%= render :partial => 'devise/menu/login_items' %>
+			</ul>
+		<% end %>
+	</div>
+</div>
+<div class="app_shell">
+	<div class="inner_shell">
+		<%= yield %>
+	</div>
+</div>
 
 </body>
 </html>

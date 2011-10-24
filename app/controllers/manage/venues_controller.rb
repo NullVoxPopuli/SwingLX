@@ -4,7 +4,7 @@ class Manage::VenuesController < Manage::RootController\
   # GET /manage/venues
   # GET /manage/venues.json
   def index
-    @manage_venues = Manage::Venue.all
+    @manage_venues = Venue.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class Manage::VenuesController < Manage::RootController\
   # GET /manage/venues/1
   # GET /manage/venues/1.json
   def show
-    @manage_venue = Manage::Venue.find(params[:id])
+    @manage_venue = Venue.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -26,7 +26,7 @@ class Manage::VenuesController < Manage::RootController\
   # GET /manage/venues/new
   # GET /manage/venues/new.json
   def new
-    @manage_venue = Manage::Venue.new
+    @manage_venue = Venue.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +36,13 @@ class Manage::VenuesController < Manage::RootController\
 
   # GET /manage/venues/1/edit
   def edit
-    @manage_venue = Manage::Venue.find(params[:id])
+    @manage_venue = Venue.find(params[:id])
   end
 
   # POST /manage/venues
   # POST /manage/venues.json
   def create
-    @manage_venue = Manage::Venue.new(params[:manage_venue])
+    @manage_venue = Venue.new(params[:manage_venue])
 
     respond_to do |format|
       if @manage_venue.save
@@ -58,7 +58,7 @@ class Manage::VenuesController < Manage::RootController\
   # PUT /manage/venues/1
   # PUT /manage/venues/1.json
   def update
-    @manage_venue = Manage::Venue.find(params[:id])
+    @manage_venue = Venue.find(params[:id])
 
     respond_to do |format|
       if @manage_venue.update_attributes(params[:manage_venue])
@@ -74,7 +74,7 @@ class Manage::VenuesController < Manage::RootController\
   # DELETE /manage/venues/1
   # DELETE /manage/venues/1.json
   def destroy
-    @manage_venue = Manage::Venue.find(params[:id])
+    @manage_venue = Venue.find(params[:id])
     @manage_venue.destroy
 
     respond_to do |format|
