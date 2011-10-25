@@ -1,12 +1,9 @@
 
-# OS generated files #
-######################
 .DS_Store?
 ehthumbs.db
 Icon?
 Thumbs.db
 
-# Others
 certificates/
 shared/
 tmp/
@@ -17,3 +14,4 @@ log/
 Gemfile.lock
 
 log/development.log
+
