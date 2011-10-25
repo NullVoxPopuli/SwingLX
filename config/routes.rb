@@ -3,8 +3,7 @@ SwingLX::Application.routes.draw do
 
   get "public/timeline"
 
-  devise_for :users
-  
+  devise_for :users, :controllers => {:registrations => "registrations"}
   match '/user' => "public#index", :as => :user_root
   
   namespace :user do
